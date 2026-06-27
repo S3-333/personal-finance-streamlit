@@ -100,7 +100,7 @@ def show_expense_charts(df: pd.DataFrame, currency_symbol: str) -> None:
         monthly = (
             df[df["Debit/Credit"] == "Debit"]
             .set_index("Date")
-            .resample("M")["Amount"]
+            .resample("ME")["Amount"]
             .sum()
             .reset_index()
         )
